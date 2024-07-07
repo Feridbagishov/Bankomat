@@ -1,9 +1,8 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    let depositButton = document.querySelector('deposit');
-    let withdrawButton = document.querySelector('withdraw');
-    let moneyInput = document.querySelector('money');
-    let userBalance = document.querySelector('userBalance');
+    let depositButton = document.querySelector('#deposit');
+    let withdrawButton = document.querySelector('#withdraw');
+    let moneyInput = document.querySelector('#money');
+    let userBalance = document.querySelector('#userBalance');
 
     let balance = 0;
 
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         userBalance.textContent = balance;
     }
 
-    depositButton.addEventListener('click', () => {
+    depositButton.addEventListener('click',function() {
         let amount = Number(moneyInput.value);
         if (amount > 0) {
             balance += amount;
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         moneyInput.value = '';
     });
 
-    withdrawButton.addEventListener('click', () => {
+    withdrawButton.addEventListener('click', function() {
         let amount = Number(moneyInput.value);
         if (amount > 0) {
             if (balance >= amount) {
@@ -39,4 +38,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateBalance();
 });
-
